@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      
+      <title>Sanchit Wadehra</title>
+      <!-- SEO Description -->
+      <meta name="description" content="{{project.seoDescription}}">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+       <link href="{{fontLink}}" rel="stylesheet">
+       <link href="{{secondaryFontLink}}" rel="stylesheet">
+      
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- Font stylesheet -->
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '{{settings.colors.primary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '{{settings.colors.secondary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '{{settings.colors.accent}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['{{settings.fonts.primary}}', 'Roboto', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['{{settings.fonts.secondary}}', 'system-ui', 'sans-serif'],
+                body: ['{{settings.fonts.secondary}}', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="keywords" content="{{project.meta.keywords}}">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+      <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+      <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+      <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+      <meta property="og:title" content="{{project.meta.ogTitle}}">
+      <meta property="og:description" content="{{project.meta.ogDescription}}">
+      <meta property="og:image" content="{{project.meta.ogImage}}">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="{{project.name}}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+      <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+      <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+      
+      <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/73468475?v=4">
+      
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: {{settings.fonts.primary}}, system-ui, sans-serif;
+        }
+        body {
+          font-family: {{settings.fonts.secondary}}, system-ui, sans-serif;
+        }
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+
+   </body>
+</html><element id="6eafbd88-ed4e-4d78-ad45-e21fabe1d885" data-section-id="6eafbd88-ed4e-4d78-ad45-e21fabe1d885">
+
+
+<div id="root">
+  <nav class="fixed w-full z-50 bg-neutral-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <span class="text-xl font-bold">SW</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="#hero" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Home</a>
+            <a href="#experience" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Experience</a>
+            <a href="#projects" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Projects</a>
+            <a href="#skills" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Skills</a>
+            <a href="#publications" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Publications</a>
+            <a href="#education" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Education</a>
+            <a href="#contact" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Contact</a>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-neutral-700 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-neutral-900">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-700 transition-colors duration-200">Home</a>
+        <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-700 transition-colors duration-200">Experience</a>
+        <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-700 transition-colors duration-200">Projects</a>
+        <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-700 transition-colors duration-200">Skills</a>
+        <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-700 transition-colors duration-200">Publications</a>
+        <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-700 transition-colors duration-200">Education</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-700 transition-colors duration-200">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="header" class="bg-neutral-900 text-white min-h-[70vh] pt-16 flex items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center animate__animated animate__fadeIn">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Sanchit Wadehra</h1>
+        <div class="flex justify-center items-center space-x-4 mb-8 flex-wrap">
+          <a href="mailto:sanchit.wadehra@gmail.com" class="flex items-center hover:text-blue-400 transition-colors duration-200">
+            <i class="fas fa-envelope mr-2"></i>
+            <span>Email</span>
+          </a>
+          <a href="https://linkedin.com/in/sanchitwadehra" class="flex items-center hover:text-blue-400 transition-colors duration-200">
+            <i class="fab fa-linkedin mr-2"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="tel:+917087669363" class="flex items-center hover:text-blue-400 transition-colors duration-200">
+            <i class="fas fa-phone mr-2"></i>
+            <span>+91 7087669363</span>
+          </a>
+          <a href="https://github.com/sanchitwadehra" class="flex items-center hover:text-blue-400 transition-colors duration-200">
+            <i class="fab fa-github mr-2"></i>
+            <span>Github</span>
+          </a>
+          <a href="https://leetcode.com/u/user1881jg/" class="flex items-center hover:text-blue-400 transition-colors duration-200">
+            <i class="fas fa-code mr-2"></i>
+            <span>Leetcode</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</div>
+</element><element id="c632205d-549c-4349-8795-1405ba5435af" data-section-id="c632205d-549c-4349-8795-1405ba5435af">
+
+
+<div id="root">
+  <section id="hero" class="bg-white py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="animate__animated animate__fadeInLeft">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neutral-800">Full Stack Developer</h2>
+          <p class="text-lg text-neutral-600 mb-8">Passionate about building scalable web applications and exploring new technologies. Specialized in MERN stack development with expertise in AI/ML integration.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#experience" class="inline-flex items-center px-6 py-3 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition-colors duration-200">
+              View Experience
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+            <a href="#projects" class="inline-flex items-center px-6 py-3 border-2 border-neutral-800 text-neutral-800 rounded-lg hover:bg-neutral-800 hover:text-white transition-colors duration-200">
+              See Projects
+            </a>
+          </div>
+        </div>
+        <div class="animate__animated animate__fadeInRight">
+          <div class="bg-neutral-100 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-4 text-neutral-800">Technical Expertise</h3>
+            <div class="space-y-3">
+              <div class="flex items-center">
+                <i class="fas fa-code text-neutral-800 mr-3"></i>
+                <span class="text-neutral-600">MERN Stack Development</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-server text-neutral-800 mr-3"></i>
+                <span class="text-neutral-600">AWS & Cloud Services</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-robot text-neutral-800 mr-3"></i>
+                <span class="text-neutral-600">AI/ML Integration</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-mobile-alt text-neutral-800 mr-3"></i>
+                <span class="text-neutral-600">Responsive Web Design</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-lock text-neutral-800 mr-3"></i>
+                <span class="text-neutral-600">Security & Authentication</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="70f6d32f-e61e-4761-b8d4-3ac411af5c8d" data-section-id="70f6d32f-e61e-4761-b8d4-3ac411af5c8d">
+
+
+<div id="root">
+  <section id="experience" class="bg-neutral-100 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-12 animate__animated animate__fadeInUp">Experience</h2>
+      
+      <div class="bg-white rounded-xl shadow-lg p-6 mb-8 hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp">
+        <div class="flex justify-between items-start flex-wrap mb-4">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-800">Full Stack Developer</h3>
+            <p class="text-neutral-600">Profit Matters</p>
+          </div>
+          <div class="text-right">
+            <span class="text-neutral-600">July 2024 - January 2025</span>
+            <p class="text-sm text-neutral-500">(Sole Developer-Architected & Built from Scratch)</p>
+          </div>
+        </div>
+        
+        <div class="mb-6">
+          <a href="https://youtu.be/Ooj-VOhc1Rs" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline mb-4">
+            View on Youtube
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+          
+          <ul class="space-y-3 text-neutral-700">
+            <li class="flex items-start">
+              <svg class="w-4 h-4 mt-1.5 mr-2 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              Developed a SEBI-compliant financial advisory platform using React.js, Node.js, Express.js and MongoDB, digitizing client onboarding and subscription management
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 mt-1.5 mr-2 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              Integrated Razorpay for secure payment processing and implemented automated invoice generation with PDFKit
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 mt-1.5 mr-2 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              Designed and implemented an OTP-based authentication system with JWT tokens for secure user access
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 mt-1.5 mr-2 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              Configured AWS services (SES, S3, SNS), utilizing S3 Object Lock for immutable storage, ensuring regulatory compliance with SEBI's data retention policies
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 mt-1.5 mr-2 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              Managed state persistence across sessions with Redux Persist to ensure seamless user interaction
+            </li>
+            <li class="flex items-start">
+              <svg class="w-4 h-4 mt-1.5 mr-2 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+              Deployed the platform using Nginx and PM2 on a VPS, ensuring scalability and optimized performance
+            </li>
+          </ul>
+        </div>
+        
+        <div class="mt-4">
+          <h4 class="text-sm font-semibold text-neutral-700 mb-2">Technologies</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">MERN Stack</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">React Redux</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">Redux Persist</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">JWT Auth</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">Razorpay</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">PDFKit</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">AWS(SNS,SES,S3)</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">Node-Cron</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">Postman</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">Github Actions</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">PM2</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">Nginx</span>
+            <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">VPS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="8f3bce4d-ea23-4451-8207-b3fe694d9c63" data-section-id="8f3bce4d-ea23-4451-8207-b3fe694d9c63">
+
+
+<div id="root">
+  <section id="projects" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-12 animate__animated animate__fadeInUp">Projects</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-neutral-800">Youtube Subtitle Searcher</h3>
+              <a href="https://github.com/sanchitwadehra/YouTubeSubtitleSearch" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline flex items-center">
+                View on Github
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+            <div class="space-y-3 text-neutral-700 mb-4">
+              <p>Developed a Chrome extension for efficient YouTube subtitle search, enabling users to find and jump to specific video moments.</p>
+              <p>Implemented real-time search with a quick interface (Ctrl+K / Cmd+K), click-to-jump to timestamps, and arrow keys for navigating results.</p>
+              <p>Used the Enter key to jump to selected timestamps and displayed searched words with their context for improved navigation.</p>
+            </div>
+            <div class="mt-4">
+              <h4 class="text-sm font-semibold text-neutral-700 mb-2">Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">JavaScript</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">HTML</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">CSS</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">Chrome Extensions API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-neutral-800">YogX - AI Powered Yoga Training</h3>
+              <a href="https://github.com/sanchitwadehra/yogx" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline flex items-center">
+                View on Github
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+            <div class="space-y-3 text-neutral-700 mb-4">
+              <p>Developed a fully offline, client-side AI system that detects and corrects asana alignment using PoseNet & ml5.js</p>
+              <p>Engineered a custom neural network for personalized asana classification & correction</p>
+              <p>Built an interactive UI with p5.js, visualizing detected asanas and providing real-time feedback</p>
+            </div>
+            <div class="mt-4">
+              <h4 class="text-sm font-semibold text-neutral-700 mb-2">Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">ml5.js</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">p5.js</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">PoseNet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp">
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-xl font-bold text-neutral-800">3D Character GenAI Animation</h3>
+              <a href="https://github.com/sanchitwadehra/Effecient-3D-Character-GenAI-Animation-Pipeline" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline flex items-center">
+                View on Github
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+            <div class="space-y-3 text-neutral-700 mb-4">
+              <p>Developed a ComfyUI pipeline integrating EpicRealism with LCM for efficient 3D character animation</p>
+              <p>Used OpenPose for pose detection and integrated IPAdapter for character image consistency</p>
+              <p>Optimized performance with LCM V3SD15MM for real-time animation generation</p>
+            </div>
+            <div class="mt-4">
+              <h4 class="text-sm font-semibold text-neutral-700 mb-2">Technologies</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">ComfyUI</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">OpenPose</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">IPAdapter</span>
+                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm">AnimateDiff</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="9ca84850-e21c-431b-813a-aafd76f1f37b" data-section-id="9ca84850-e21c-431b-813a-aafd76f1f37b">
+
+
+<div id="root">
+  <section id="skills" class="bg-neutral-100 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-12 animate__animated animate__fadeInUp">Skills</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Languages -->
+        <div class="bg-white p-6 rounded-xl shadow-lg animate__animated animate__fadeInUp">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-code text-2xl text-neutral-800 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-800">Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">Javascript</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">CSS</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">HTML</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">Python</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">C/C++</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">Java</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">SQL</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200">Bash</span>
+          </div>
+        </div>
+
+        <!-- Frontend Development -->
+        <div class="bg-white p-6 rounded-xl shadow-lg animate__animated animate__fadeInUp">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-desktop text-2xl text-neutral-800 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-800">Frontend Development</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">React.js</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">Tailwind</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">Shadcn/ui</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">Bootstrap</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">Redux</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">Redux Persist</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">React Router</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">React Hook form</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">TinyMCE</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">Vite</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full hover:bg-green-200 transition-colors duration-200">Axios</span>
+          </div>
+        </div>
+
+        <!-- Backend Development -->
+        <div class="bg-white p-6 rounded-xl shadow-lg animate__animated animate__fadeInUp">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-server text-2xl text-neutral-800 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-800">Backend Development</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200">Node.js</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200">Express.js</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200">MongoDB</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200">MySQL</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200">REST APIs</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200">JWT Auth</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full hover:bg-purple-200 transition-colors duration-200">Firebase Auth</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Deployment -->
+        <div class="bg-white p-6 rounded-xl shadow-lg animate__animated animate__fadeInUp">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-cloud text-2xl text-neutral-800 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-800">DevOps & Deployment</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full hover:bg-orange-200 transition-colors duration-200">Nginx</span>
+            <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full hover:bg-orange-200 transition-colors duration-200">PM2</span>
+            <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full hover:bg-orange-200 transition-colors duration-200">VPS</span>
+            <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full hover:bg-orange-200 transition-colors duration-200">Docker</span>
+            <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full hover:bg-orange-200 transition-colors duration-200">Github Actions</span>
+            <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full hover:bg-orange-200 transition-colors duration-200">AWS Services</span>
+          </div>
+        </div>
+
+        <!-- AI & ML -->
+        <div class="bg-white p-6 rounded-xl shadow-lg animate__animated animate__fadeInUp md:col-span-2">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-brain text-2xl text-neutral-800 mr-3"></i>
+            <h3 class="text-xl font-bold text-neutral-800">AI & ML Integrations</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">ML5.js</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">P5.js</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">ComfyUI</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">Stable Diffusion</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">ControlNet</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">AnimateDiff</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">IPAdapter</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">LoRA Models</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full hover:bg-red-200 transition-colors duration-200">LCM Models</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="96f50f0c-4f8b-4d3c-b0f4-65b13b3c55f8" data-section-id="96f50f0c-4f8b-4d3c-b0f4-65b13b3c55f8">
+
+
+<div id="root">
+  <section id="publications" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-12 animate__animated animate__fadeInUp">Publications & Certification</h2>
+      
+      <div class="space-y-8">
+        <!-- Research Paper -->
+        <div class="bg-white rounded-xl shadow-lg p-6 animate__animated animate__fadeInUp">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-neutral-800 mb-2">Research Papers on AI in Face Mask Detection & Energy Optimization</h3>
+              <p class="text-neutral-600 mb-2">Published by: Proceedings of the 5th International Conference on Information Management & Machine Learning</p>
+              <div class="inline-flex items-center text-sm text-neutral-500">
+                <i class="far fa-calendar-alt mr-2"></i>
+                <span>November 2023</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <a href="https://dl.acm.org/profile/99661201225/publications?Role=author" target="_blank" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors duration-200">
+                <i class="fas fa-file-alt mr-2"></i>
+                Research Paper
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oracle Certification -->
+        <div class="bg-white rounded-xl shadow-lg p-6 animate__animated animate__fadeInUp">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-neutral-800 mb-2">Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</h3>
+              <div class="flex items-center text-sm text-neutral-500 space-x-4">
+                <div class="inline-flex items-center">
+                  <i class="far fa-calendar-alt mr-2"></i>
+                  <span>July 2024 - July 2026</span>
+                </div>
+              </div>
+            </div>
+            <div class="ml-4">
+              <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=371D120A4A9B3302D614A51CF7750A8ED14FB00881BCEA03140D3F39C7F83970" target="_blank" class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 hover:bg-green-200 transition-colors duration-200">
+                <i class="fas fa-certificate mr-2"></i>
+                Certification
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="ee773337-f1d0-456c-883b-1ec55d3d68de" data-section-id="ee773337-f1d0-456c-883b-1ec55d3d68de">
+
+
+                
+<div id="root">
+  <section id="education" class="bg-neutral-100 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-7m7z5po3">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-12 animate__animated animate__fadeInUp" id="el-tqq36fvh">Education</h2>
+      
+      <div class="relative" id="el-mh4502lu">
+        <!-- Timeline Line -->
+        <div class="absolute left-0 md:left-1/2 h-full w-0.5 bg-neutral-300 transform -translate-x-1/2" id="el-zknewfqr"></div>
+
+        <!-- Education Item -->
+        <div class="relative pl-8 md:pl-0 mb-8 animate__animated animate__fadeInUp" id="el-ww1rv7gq">
+  <div class="md:w-1/2 md:pr-8 md:ml-auto">
+    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <!-- Timeline Dot -->
+      <div class="absolute left-0 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform -translate-x-1/2 mt-2"></div>
+      
+      <h3 class="text-xl font-bold text-neutral-800 mb-2">BE CSE with Specialization in AI &amp; ML</h3>
+      <div class="text-neutral-600 mb-2">Chandigarh University, Punjab (India)</div>
+      
+      <div class="flex flex-wrap items-center gap-4 text-sm text-neutral-500">
+        <div class="flex items-center">
+          <i class="far fa-calendar-alt mr-2"></i>
+          <span>June 2022 - Ongoing</span>
+        </div>
+        <div class="flex items-center">
+          <i class="fas fa-graduation-cap mr-2"></i>
+          <span>CGPA - 7.6</span>
+        </div>
+      </div>
+      
+      <div class="mt-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+          <i class="fas fa-laptop-code mr-2"></i>
+          Computer Science
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 ml-2">
+          <i class="fas fa-brain mr-2"></i>
+          AI &amp; ML
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Achievement Item -->
+        <div class="relative pl-8 md:pl-0 animate__animated animate__fadeInUp" id="el-559nlaqe">
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+              </element><element id="1c4b6108-1f4b-4ed3-9302-7ff97736b237" data-section-id="1c4b6108-1f4b-4ed3-9302-7ff97736b237">
+
+
+<div id="root">
+  <section id="achievements" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-12 animate__animated animate__fadeInUp">Achievements</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Achievement Card -->
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 animate__animated animate__fadeInUp">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                <i class="fas fa-trophy text-xl"></i>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-neutral-800 mb-2">Technothlon</h3>
+              <p class="text-neutral-600 mb-3">IIT-Guwahati</p>
+              <div class="flex flex-wrap gap-3">
+                <span class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
+                  <i class="fas fa-medal mr-2"></i>
+                  All India Rank: 486
+                </span>
+                <span class="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-lg">
+                  <i class="far fa-calendar-alt mr-2"></i>
+                  2018
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 animate__animated animate__fadeInUp">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-star text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-800 mb-4">Academic Excellence</h3>
+            <div class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-lg">
+              <i class="fas fa-graduation-cap mr-2"></i>
+              CGPA: 7.6
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="f57f0102-3958-46df-8d15-2f5e4eab67d2" data-section-id="f57f0102-3958-46df-8d15-2f5e4eab67d2">
+
+
+<div id="root">
+  <section id="contact" class="bg-neutral-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-12 text-center animate__animated animate__fadeInUp">Get In Touch</h2>
+      
+      <!-- Contact Info -->
+      <div class="max-w-2xl mx-auto animate__animated animate__fadeInLeft">
+        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+        <div class="space-y-6">
+          <a href="mailto:sanchit.wadehra@gmail.com" class="flex items-center group hover:bg-neutral-800 p-4 rounded-lg transition-all duration-300">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-envelope text-xl"></i>
+            </div>
+            <div>
+              <div class="text-sm text-neutral-400">Email</div>
+              <div class="group-hover:text-blue-400 transition-colors duration-200">sanchit.wadehra@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="tel:+917087669363" class="flex items-center group hover:bg-neutral-800 p-4 rounded-lg transition-all duration-300">
+            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-phone text-xl"></i>
+            </div>
+            <div>
+              <div class="text-sm text-neutral-400">Phone</div>
+              <div class="group-hover:text-green-400 transition-colors duration-200">+91 7087669363</div>
+            </div>
+          </a>
+
+          <div class="flex justify-center space-x-4 mt-8">
+            <a href="https://linkedin.com/in/sanchitwadehra" target="_blank" class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+            <a href="https://github.com/sanchitwadehra" target="_blank" class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://leetcode.com/u/user1881jg/" target="_blank" class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors duration-300">
+              <i class="fas fa-code text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</element><element id="d309848c-30f4-4d8d-8d4f-c682ca7934fd" data-section-id="d309848c-30f4-4d8d-8d4f-c682ca7934fd">
+
+
+<div id="root">
+  <footer id="footer" class="bg-neutral-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-neutral-400">&copy; 2024 Sanchit Wadehra. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div></element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          
